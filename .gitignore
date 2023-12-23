@@ -1,0 +1,8 @@
+infra/terraform/keypair
+viccuna/
+.env
+.terraform
+.terraform*
+terraform.tfstate*
+,mypy_cache
+output.json
