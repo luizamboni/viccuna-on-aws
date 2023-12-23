@@ -1,5 +1,5 @@
 infra/terraform/keypair
-viccuna/
+vicuna/
 .env
 .terraform
 .terraform*

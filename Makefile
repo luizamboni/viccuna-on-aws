@@ -17,7 +17,7 @@ init:
 	init
 
 
-plan: 
+plan: init
 	docker run --rm -it --name terraform \
 	-v $(shell pwd)/infra/terraform/:/workspace \
 	-v ${ssh_key_path}:${ssh_key_path} \
@@ -31,7 +31,7 @@ plan:
 
 
 
-deploy: 
+deploy: init
 	docker run --rm -it --name terraform \
 	-v $(shell pwd)/infra/terraform/:/workspace \
 	-v ${ssh_key_path}:${ssh_key_path} \
@@ -44,7 +44,7 @@ deploy:
 	-var="ssh_key_path=${ssh_key_path}" \
 	-auto-approve
 
-destroy: 
+destroy: init
 	docker run --rm -it --name terraform \
 	-v $(shell pwd)/infra/terraform/:/workspace \
 	-v ${ssh_key_path}:${ssh_key_path} \
